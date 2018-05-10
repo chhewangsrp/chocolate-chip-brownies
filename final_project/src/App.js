@@ -7,7 +7,7 @@ import MapContainer from './MapContainer'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div style={{ width: '100%', height: '100%' }}>
         <h1> Google Maps API + React </h1> 
      <MapContainer google={this.props.google} />
       </div>
@@ -15,5 +15,5 @@ class App extends Component {
   }
 }
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyCecQeg-nhFrgBAtjxDvsw7vTyOUmNnk5k',
+  apiKey: 'AIzaSyDwanhWM9TOLgIahbB40OllN4TGKHT5S3M',
 })(App)
