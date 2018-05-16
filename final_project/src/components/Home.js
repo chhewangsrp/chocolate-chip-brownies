@@ -2,14 +2,17 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import Maps from "./Maps";
+import SearchBox from "./SearchBox";
 
 
 class Home extends React.Component {
 
 	render(){
 		return(
-			<Maps />
-
+		<div>	
+			<Maps /> 	
+			<SearchBox />		
+		</div>	
 
 		);		
 
