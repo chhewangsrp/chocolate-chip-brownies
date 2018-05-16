@@ -8,7 +8,6 @@ body {
 {
 	color: white;
 
-
 }
 
 .nav-item
@@ -19,8 +18,8 @@ body {
 .navbar 
 {
 	background-color: #813772;
-	width: 115%;
-	margin-left:  -84px;
+	position: fixed;
+	width: 100%;
 	
 }
 
@@ -34,18 +33,14 @@ body {
 .cityName
 {
 	margin-top: 7px;
-	margin-right: 70px;
+	
 }
 
 .btn
 {
-	margin-left: 100px;
+	margin-left: 80px;
 }
 
-.sign-up 
-{
-	padding-left: 20px;
-}
 
 .login-box
 {
@@ -53,19 +48,14 @@ body {
 }
 .map-container 
 {
-	padding-top: 0px;
-	position: relative;
-	margin-left: -85px;
-	z-index: -1;
-	position: absolute;
+	position: fixed;
 	z-index: -100;
 }
-.container .box-container
+.box-container
 {
 	height: 300px;
 	width: 450px;
 	background-color: #ADD8E6;
-	margin-left: -10px;
 	margin-top: 40px;
 	position: fixed;
 	z-index: 100;
@@ -78,3 +68,4 @@ body {
 	padding-top: 10px;
 	padding-left: 30px;
 }
+

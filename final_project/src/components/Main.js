@@ -72,8 +72,7 @@ class Main extends React.Component
 			</nav>
 				
 				  <div className="content">
-                        <Route exact path ="/" render = {()=> <Home/>} />
-                       {/* <Route exact path="/Login" render={() => <Login users = {this.state.users}/>} />*/}
+                        <Route exact path ="/" render = {()=> <Home/>} />                 
                  </div>  
 		</div>
 
