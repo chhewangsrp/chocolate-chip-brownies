@@ -1,4 +1,5 @@
 import React from "react";
+import base from '../base';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css';
 import logo from "./Logo1.png"
@@ -6,7 +7,7 @@ import { BrowserRouter, NavLink, Route } from 'react-router-dom';
 import './index.css'
 import Home from './Home';
 
-class Main extends React.Component 
+class Main extends React.Component
 {
 	constructor(props) {
 		super(props);
@@ -14,7 +15,7 @@ class Main extends React.Component
 			Neighborhood: []
 		}
 
-	}	
+	}
 
 	componentDidMount() {
 		axios.get(`https://data.cityofnewyork.us/api/views/xyye-rtrs/rows.json?accessType=DOWNLOAD`)
@@ -27,28 +28,38 @@ class Main extends React.Component
       }).catch(err=>{
       		console.log("Error Occured Fetching: ",err);
       });
+
+			this.locationsRef = base.syncState('locations', {
+        context: this,
+        state: 'locations',
+        asArray: true
+    });
 	}
+
+	componentWillUnmount() {
+    base.removeBinding(this.locationsRef);
+}
 
 
 
 	render() {
 
-		const dropDownMenu = this.state.Neighborhood.map((neighborhood, index)=> 
-		<option key={index}>	
-			{neighborhood[10]} 
+		const dropDownMenu = this.state.Neighborhood.map((neighborhood, index)=>
+		<option key={index}>
+			{neighborhood[10]}
  		 </option> )
-		
+
     return (
-    	
+
     	<BrowserRouter>
 
-       <div className = "container form"> 
-       
+       <div className = "container form">
 
-        <nav className="navbar navbar-expand-lg ">	
+
+        <nav className="navbar navbar-expand-lg ">
                 <ul className="navbar-nav">
                 	<li className= "nav-item">
-                		<img className= "logo" src={logo}/> 
+                		<img className= "logo" src={logo}/>
                 	</li>
                     <li className="nav-item">
                         <NavLink to={"/"} className="nav-link" href="#">Home</NavLink>
@@ -70,15 +81,15 @@ class Main extends React.Component
    				</li>
    			</ul>
 			</nav>
-				
+
 				  <div className="content">
                         <Route exact path ="/" render = {()=> <Home/>} />
                        {/* <Route exact path="/Login" render={() => <Login users = {this.state.users}/>} />*/}
-                 </div>  
+                 </div>
 		</div>
 
 		</BrowserRouter>
-	
+
 
 		);
 

@@ -11,8 +11,8 @@ class Home extends React.Component {
 			<Maps />
 
 
-		);		
+		);
 
 	}
-}	
+}
 export default Home;
