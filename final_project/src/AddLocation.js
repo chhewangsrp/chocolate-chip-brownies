@@ -1,6 +1,5 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-
+import 'bootstrap';
 class AddLocation extends React.Component {
 	constructor(props) {
 		super(props);
