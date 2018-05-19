@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 
 class MapContainer extends Component {
@@ -58,19 +59,24 @@ class MapContainer extends Component {
   }
 
   render() {
-    console.log('in main')
-    console.log(this.props.players)
+    return (
+      <Map google={this.props.google}
+        initialCenter={{lat: 40.7485722, lng: -74.0068633}}
+        style={{width: '100%', height: '100%', position: 'relative'}}
+        className={'map'}
+        zoom={11}>
 
-    const style = { // MUST specify dimensions of the Google map or it will not work. Also works best when style is specified inside the render function and created as an object
-      width: '100vw', // 90vw basically means take up 90% of the width screen. px also works.
-      height: '90vh' // 75vh similarly will take up roughly 75% of the height of the screen. px also works.
-    }
-
-    return ( // in our return function you must return a div with ref='map' and style.
-      <div ref="map" style={style}>
-
-      </div>
-    )
+        {this.state.locations.map((location) => {
+          return (
+            <Marker
+              title={location.name}
+              name={location.name}
+              position={location.location}
+            />
+          );
+        })}
+      </Map>
+    );
   }
 }
 
