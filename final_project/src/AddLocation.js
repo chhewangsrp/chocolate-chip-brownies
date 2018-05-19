@@ -1,5 +1,9 @@
 import React from 'react';
 import 'bootstrap';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 26062bbb2c2630f0f383623f5d094fce9c280bdd
 class AddLocation extends React.Component {
 	constructor(props) {
 		super(props);
