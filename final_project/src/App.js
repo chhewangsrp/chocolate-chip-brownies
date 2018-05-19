@@ -13,26 +13,12 @@ class App extends Component {
         super(props);
         this.state = {
             players: [],
-            teams: {}
 
         };
 
         this.addToMaps = this.addToMaps.bind(this);
        
     }
-
-    // componentDidMount() {
-    //     this.playersRef = base.syncState('players', {
-    //         context: this,
-    //         state: 'players',
-    //         asArray: true
-    //     });
-    // }
-
-    // componentWillUnmount() {
-    //     base.removeBinding(this.playersRef);
-    //     base.removeBinding(this.teamsRef);
-    // }
 
     addToMaps(player) {
         
@@ -48,7 +34,7 @@ class App extends Component {
     return (
       <div style={{ width: '100%', height: '100%' }}>
         <h1> Google Maps API + React </h1> 
-     <MapContainer google={this.props.google} />
+     <MapContainer google={this.props.google} players={this.state.players} />
      <AddLocation addToMaps={this.addToMaps}/>
       </div>
     );
