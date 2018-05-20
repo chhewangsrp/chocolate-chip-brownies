@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <div style={{ width: '100%' , height: '100%' }}>
-        <SearchBox />
+        <SearchBox addToMaps={this.addToMaps}/>
      <MapContainer google={this.props.google} locations={this.state.locations} />
      {/* <AddLocation addToMaps={this.addToMaps}/> */}
 
