@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import 'bootstrap';
 // import the Google Maps API Wrapper from google-maps-react
 import { GoogleApiWrapper } from 'google-maps-react' 
 // import child component
 import MapContainer from './MapContainer'
 import AddLocation from './AddLocation';
+import SearchBox from './SearchBox';
 import base from './base';
 
 class App extends Component {
@@ -32,10 +34,11 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{ width: '100%', height: '100%' }}>
-        <h1> Google Maps API + React </h1> 
-        <AddLocation addToMaps={this.addToMaps}/>
+      <div style={{ width: '100%' , height: '100%' }}>
+        <SearchBox />
      <MapContainer google={this.props.google} locations={this.state.locations} />
+     {/* <AddLocation addToMaps={this.addToMaps}/> */}
+
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 class MapContainer extends Component {
 
@@ -9,20 +9,11 @@ class MapContainer extends Component {
   // ======================
 
 
-  data = {
-   locations:[
-      {name:"apil", location:this.props.locations},
-      { name: "New York County Supreme Court", location: { lat: 40.7143033, lng: -74.0036919 } },
-      { name: "Queens County Supreme Court", location: { lat: 40.7046946, lng: -73.8091145 } },
-      { name: "Kings County Supreme Court", location: { lat: 40.6940226, lng: -73.9890967 } },
-      { name: "Richmond County Supreme Court", location: { lat: 40.6412336, lng: -74.0768597 } },
-      { name: "Bronx Supreme Court", location: { lat: 40.8262388, lng: -73.9235238 } }
-     ]
-  }
-
   componentDidMount() {
     this.loadMap(); // call loadMap function to load the google map
   }
+
+
 
   loadMap() {
     if (this.props && this.props.google) { // checks to make sure that props have been passed
@@ -47,19 +38,22 @@ class MapContainer extends Component {
   render() {
     return (
       <Map google={this.props.google}
-        initialCenter={{lat: 40.7485722, lng: -74.0068633}}
-        style={{width: '100%', height: '100%', position: 'relative'}}
+        initialCenter={{ lat: 40.7485722, lng: -74.0068633 }}
+        style={{ width: '100%', height: '100%', position: 'relative' }}
         className={'map'}
         zoom={11}>
 
-{console.log(this.props.locations)}
 
         {this.props.locations.map(location => {
           return (
+
+
+
             <Marker
-            //  title={location.name}
-            //   name={location.name}
-              position={{lat: location.lat, lng: location.lng
+              //  title={location.name}
+              //   name={location.name}
+              position={{
+                lat: location.lat, lng: location.lng
               }}
             />
           );
