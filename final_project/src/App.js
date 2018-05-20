@@ -12,7 +12,7 @@ class App extends Component {
 	{
         super(props);
         this.state = {
-            players: [],
+            locations: [] ,
 
         };
 
@@ -20,11 +20,11 @@ class App extends Component {
        
     }
 
-    addToMaps(player) {
+    addToMaps(location) {
         
-        const players = this.state.players.concat(player);
+        const locations = this.state.locations.concat(location);
         this.setState({
-           players: players,
+           locations: locations,
         });
         
     }
@@ -34,8 +34,8 @@ class App extends Component {
     return (
       <div style={{ width: '100%', height: '100%' }}>
         <h1> Google Maps API + React </h1> 
-     <MapContainer google={this.props.google} players={this.state.players} />
-     <AddLocation addToMaps={this.addToMaps}/>
+        <AddLocation addToMaps={this.addToMaps}/>
+     <MapContainer google={this.props.google} locations={this.state.locations} />
       </div>
     );
   }

@@ -1,16 +1,12 @@
 import React from 'react';
 import 'bootstrap';
-<<<<<<< HEAD
-=======
-
->>>>>>> 26062bbb2c2630f0f383623f5d094fce9c280bdd
 class AddLocation extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			
-			longitude: '',
-			latitude: ''
+			lat: '',
+			lng: ''
 		};
 
 		this.handleEvent = this.handleEvent.bind(this);
@@ -34,8 +30,8 @@ class AddLocation extends React.Component {
 		event.preventDefault();
 		this.setState({
 			
-            longitude: '',
-            latitude:''
+            lat: '',
+            lng:''
 			
 		});
 
@@ -54,7 +50,7 @@ class AddLocation extends React.Component {
 						<label className="col-sm-0 col-form-label score"> Longitude </label>
 
 						<div className="col-sm-11">
-							<input type="number" name="longitude" onChange={(event) => this.handleEvent(event)} className="form-control" value={this.state.longitude} placeholder="0" />
+							<input type="number" name="lng" onChange={(event) => this.handleEvent(event)} className="form-control" value={this.state.lng} placeholder="0" />
 						</div>
 					</div>
 
@@ -62,7 +58,7 @@ class AddLocation extends React.Component {
 						<label className="col-sm-0 col-form-label score"> Latitude </label>
 
 						<div className="col-sm-11">
-							<input type="number" name="latitude" onChange={(event) => this.handleEvent(event)} className="form-control" value={this.state.latitude} placeholder="0" />
+							<input type="number" name="lat" onChange={(event) => this.handleEvent(event)} className="form-control" value={this.state.lat} placeholder="0" />
 						</div>
 					</div>
 					
