@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.nav-link
+{
+	color: white;
+
+
+}
+
+.nav-item
+{
+	padding-right: 130px;
+}
+
+.navbar 
+{
+	background-color: #813772;
+	width: 115%;
+	margin-left:  -84px;
+	
+}
+
+.logo
+{
+	height: 40px;
+	width: 50px;
+	background-color: #813772;
+}
+
+.cityName
+{
+	margin-top: 7px;
+	margin-right: 70px;
+}
+
+.btn
+{
+	margin-left: 100px;
+}
+
+.sign-up 
+{
+	padding-left: 20px;
+}
+
+.login-box
+{
+	padding-top: 100px;
+}
+.map-container 
+{
+	padding-top: 0px;
+	position: relative;
+	margin-left: -85px;
+	z-index: -1;
+	position: absolute;
+	z-index: -100;
+}
+.container .box-container
+{
+	height: 300px;
+	width: 450px;
+	background-color: #ADD8E6;
+	margin-left: -10px;
+	margin-top: 40px;
+	position: fixed;
+	z-index: 100;
+	opacity: .85;
+	border-radius: 10px;
+
+}
+.input-box
+{
+	padding-top: 10px;
+	padding-left: 30px;
+}

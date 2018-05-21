@@ -8,7 +8,6 @@ class MapContainer extends Component {
   // ADD LOCATIONS TO STATE
   // ======================
 
-
   componentDidMount() {
     this.loadMap(); // call loadMap function to load the google map
   }
