@@ -18,7 +18,7 @@ body {
 .navbar 
 {
 	background-color: #813772;
-	width: 100%;
+	
 	
 }
 
@@ -40,30 +40,21 @@ body {
 	margin-left: 80px;
 }
 
-
-.login-box
-{
-	padding-top: 100px;
-}
-
-.map-container 
-{
-	position: fixed;
-	z-index: -100;
-}
-
 .box-container
 {
 	height: 300px;
 	width: 450px;
 	background-color: #ADD8E6;
-	margin-top: 80px;
+	margin-top: 100px;
 	z-index: 100;
 	opacity: .85;
 	border-radius: 10px;
-	position: fixed;
+	position: absolute;
+	display: block;
+	margin-left: 50px;
 
 }
+
 .input-box
 {
 	padding-top: 10px;
@@ -72,5 +63,6 @@ body {
 
 .container .form
 {
-	position: relative;
+	position: fixed;
 }
+
