@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom'
+import Dimensions from 'react-dimensions'
 
 
 class MapContainer extends Component {
@@ -53,12 +54,15 @@ class MapContainer extends Component {
 
   render() {
     const style = { // MUST specify dimensions of the Google map or it will not work. Also works best when style is specified inside the render function and created as an object
-      width: '80vw', // 90vw basically means take up 90% of the width screen. px also works.
-      height: '90vh' // 75vh similarly will take up roughly 75% of the height of the screen. px also works.
+      width: '78vw', // 90vw basically means take up 90% of the width screen. px also works.
+      height: '90vh', // 75vh similarly will take up roughly 75% of the height of the screen. px also works.
+      position: 'fixed',
+      alignSelf: 'stretch',
+      marginLeft: '-30px'
     }
 
     return ( // in our return function you must return a div with ref='map' and style.
-      <div ref="map" style={style}>
+      <div ref="map" className = "container" style={style}>
         
       </div>
     )

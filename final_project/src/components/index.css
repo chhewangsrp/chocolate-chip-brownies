@@ -12,13 +12,12 @@ body {
 
 .nav-item
 {
-	padding-right: 130px;
+	padding-right: 100px;
 }
 
 .navbar 
 {
 	background-color: #813772;
-	position: fixed;
 	width: 100%;
 	
 }
@@ -46,21 +45,23 @@ body {
 {
 	padding-top: 100px;
 }
+
 .map-container 
 {
 	position: fixed;
 	z-index: -100;
 }
+
 .box-container
 {
 	height: 300px;
 	width: 450px;
 	background-color: #ADD8E6;
-	margin-top: 40px;
-	position: fixed;
+	margin-top: 80px;
 	z-index: 100;
 	opacity: .85;
 	border-radius: 10px;
+	position: fixed;
 
 }
 .input-box
@@ -69,3 +70,7 @@ body {
 	padding-left: 30px;
 }
 
+.container .form
+{
+	position: relative;
+}
