@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import SearchBox from './SearchBox';
+import './index.css'
+
 
 class MapContainer extends Component {
 
@@ -36,18 +39,16 @@ class MapContainer extends Component {
   }
 
   render() {
+
     return (
+      
       <Map google={this.props.google}
         initialCenter={{ lat: 40.7485722, lng: -74.0068633 }}
-        style={{ width: '100%', height: '100%', position: 'relative' }}
-        className={'map'}
-        zoom={11}>
+        zoom={11} className = "container form">
 
 
         {this.props.locations.map(location => {
           return (
-
-
 
             <Marker
               //  title={location.name}
@@ -59,6 +60,7 @@ class MapContainer extends Component {
           );
         })}
       </Map>
+      
     );
   }
 }
