@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+//import './App.css';
 import 'bootstrap';
 // import the Google Maps API Wrapper from google-maps-react
 import { GoogleApiWrapper } from 'google-maps-react' 
@@ -7,9 +7,8 @@ import { GoogleApiWrapper } from 'google-maps-react'
 import MapContainer from './MapContainer'
 import AddLocation from './AddLocation';
 import SearchBox from './SearchBox';
-import base from './base';
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) 
 	{
         super(props);
