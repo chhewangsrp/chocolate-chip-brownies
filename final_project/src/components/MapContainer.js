@@ -11,7 +11,17 @@ class MapContainer extends React.Component {
   // ADD LOCATIONS TO STATE
   // ======================
 
+  constructor (props){
+  super(props);
 
+    this.state = {
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {},
+    };
+
+  this.onMarkerClick = this.onMarkerClick.bind(this); 
+}
   componentDidMount() {
     this.loadMap(); // call loadMap function to load the google map
   }
@@ -38,6 +48,15 @@ class MapContainer extends React.Component {
     }
   }
 
+ onMarkerClick (props, marker, e) {
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+
+  }
+
   render() {
 
     return (
@@ -51,15 +70,24 @@ class MapContainer extends React.Component {
           return (
             
             <Marker key={index}
-              //  title={location.name}
-              //   name={location.name}
-              position={{
+                name = {location.time}
+                onClick = {this.onMarkerClick}
+                position={{
                 lat: location.lat, lng: location.lng
               }}
             />
              
           );
         })}
+        <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}>
+            <div>
+              <p>This parking is available from: </p>
+              <h1>{this.state.selectedPlace.name}</h1>
+
+            </div>
+        </InfoWindow>
       </Map>
      
     );
