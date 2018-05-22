@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react'
 import ReactDOM from 'react-dom';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import SearchBox from './SearchBox';
+import './index.css'
 
-class MapContainer extends Component {
+
+class MapContainer extends React.Component {
 
   // ======================
   // ADD LOCATIONS TO STATE
@@ -29,36 +32,36 @@ class MapContainer extends Component {
         mapTypeId: 'roadmap' // optional main map layer. Terrain, satellite, hybrid or roadmap--if unspecified, defaults to roadmap.
       })
 
-      this.map = new maps.Map(node, mapConfig); // creates a new Google map on the specified node (ref='map') with the specified configuration set above.
+      /*this.map = new maps.Map(node);*/ // creates a new Google map on the specified node (ref='map') with the specified configuration set above.
 
 
     }
   }
 
   render() {
+
     return (
+     
       <Map google={this.props.google}
         initialCenter={{ lat: 40.7485722, lng: -74.0068633 }}
-        style={{ width: '100%', height: '100%', position: 'relative' }}
-        className={'map'}
-        zoom={11}>
+        zoom={11} className = "container form">
 
 
-        {this.props.locations.map(location => {
+        {this.props.locations.map( (location,index) => {
           return (
-
-
-
-            <Marker
+            
+            <Marker key={index}
               //  title={location.name}
               //   name={location.name}
               position={{
                 lat: location.lat, lng: location.lng
               }}
             />
+             
           );
         })}
       </Map>
+     
     );
   }
 }
