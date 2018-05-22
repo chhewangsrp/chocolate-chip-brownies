@@ -40,12 +40,18 @@ body {
 	margin-left: 80px;
 }
 
+.map-container 
+{
+	position: fixed;
+	z-index: -100;
+}
+
 .box-container
 {
 	height: 300px;
 	width: 450px;
 	background-color: #ADD8E6;
-	margin-top: 100px;
+	margin-top: 50px;
 	z-index: 100;
 	opacity: .85;
 	border-radius: 10px;
@@ -54,7 +60,6 @@ body {
 	margin-left: 50px;
 
 }
-
 .input-box
 {
 	padding-top: 10px;
