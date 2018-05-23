@@ -13,10 +13,10 @@ class App extends React.Component {
         super(props);
         this.state = {
             locations: [] ,
-
         };
 
         this.addToMaps = this.addToMaps.bind(this);
+        
        
     }
 
@@ -26,6 +26,7 @@ class App extends React.Component {
         state: 'locations',
         asArray: true
     });
+   
 }
   
   componentWillUnmount() 
@@ -34,38 +35,27 @@ class App extends React.Component {
   }
 
     addToMaps(location) {
-        
         const locations = this.state.locations.concat(location);
         this.setState({
-           locations: locations,
+           locations: locations
         });
     }
-
     
 
   render() {
+    
+    console.log(this.state.locations);
     const map = <MapContainer google={this.props.google} locations={this.state.locations} />
      
-    
-    console.log(this.state.locations)
     return (
 
-      <div>
-      <div >
-        
-     
-     {/* <AddLocation addToMaps={this.addToMaps}/> */}
-
-      </div>
-
       
+
       <BrowserRouter>
 
 
-       <div className = "container form"> 
-       
-        
-       
+       <div> 
+              
         <nav className="navbar navbar-expand-lg ">  
                 <ul className="navbar-nav">
                   <li className= "nav-item">
@@ -86,7 +76,7 @@ class App extends React.Component {
         
          <Route exact path ="/" render = {()=>
           <div>
-          <SearchBox addToMaps={this.addToMaps}/>
+          <SearchBox addToMaps={this.addToMaps} />
           {map}
           </div>
           } />                 
@@ -94,7 +84,7 @@ class App extends React.Component {
     </div>
 
     </BrowserRouter>
-    </div>
+    
 
     );
   }

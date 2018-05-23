@@ -6,7 +6,13 @@ import './index.css';
 class LocationSearchInput extends React.Component {
   constructor(props) {
     super(props);  
-    this.state = { address: '' }
+    this.state = { address: '', 
+                   time: new Date(),
+                   lat: '',
+                   lng: ''
+                 }
+  
+        this.handleClick = this.handleClick.bind(this);
   }
 
 
@@ -16,12 +22,20 @@ class LocationSearchInput extends React.Component {
   }
 
   handleSelect = (address) => {
+
+    const date = new Date().toLocaleTimeString();
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => this.props.addToMaps(latLng))
+      .then(latLng => this.setState({lat: latLng.lat, lng: latLng.lng, time: date}))
       .catch(error => console.error('Error', error))
-
+  
   }
+
+  handleClick (e) {
+    e.preventDefault();
+    this.props.addToMaps(this.state)
+  }
+
 
 
   render() {
@@ -33,14 +47,22 @@ class LocationSearchInput extends React.Component {
         onSelect={this.handleSelect}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps }) => (
-          <div className = "box-container input-box">
+          <div className = "box-container">
 
-            <input
-              {...getInputProps({
-                placeholder: 'Enter a location',
-                className: 'col-sm-10'
-              })}
-            />
+            <div className = "input-box">
+
+                <input
+                  {...getInputProps({
+                    placeholder: 'Enter a location',
+                    className: 'col-sm-10'
+                  })}
+                />
+
+            
+
+            <button onClick = {this.handleClick}> Add </button>
+
+            </div>
             <div className="autocomplete-dropdown-container">
               {suggestions.map(suggestion => {
                 const className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item';
