@@ -13,8 +13,6 @@ class App extends React.Component {
         super(props);
         this.state = {
             locations: [] ,
-           
-  
         };
 
         this.addToMaps = this.addToMaps.bind(this);
@@ -51,19 +49,12 @@ class App extends React.Component {
      
     return (
 
-      <div>
-      <div >
-        
-     
-     {/* <AddLocation addToMaps={this.addToMaps}/> */}
-
-      </div>
-
       
+
       <BrowserRouter>
 
 
-       <div className = "container form"> 
+       <div> 
               
         <nav className="navbar navbar-expand-lg ">  
                 <ul className="navbar-nav">
@@ -93,7 +84,7 @@ class App extends React.Component {
     </div>
 
     </BrowserRouter>
-    </div>
+    
 
     );
   }

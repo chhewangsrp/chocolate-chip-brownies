@@ -18,6 +18,7 @@ body {
 .navbar 
 {
 	background-color: #813772;
+	width: 100%;
 	
 	
 }
@@ -49,7 +50,7 @@ body {
 .box-container
 {
 	height: 300px;
-	width: 450px;
+	width: 400px;
 	background-color: #ADD8E6;
 	margin-top: 50px;
 	z-index: 100;
@@ -62,7 +63,7 @@ body {
 }
 .input-box
 {
-	padding-top: 10px;
+	padding-top: 60px;
 	padding-left: 30px;
 }
 

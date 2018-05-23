@@ -47,15 +47,22 @@ class LocationSearchInput extends React.Component {
         onSelect={this.handleSelect}
       >
         {({ getInputProps, suggestions, getSuggestionItemProps }) => (
-          <div className = "box-container input-box">
+          <div className = "box-container">
 
-            <input
-              {...getInputProps({
-                placeholder: 'Enter a location',
-                className: 'col-sm-10'
-              })}
-            />
+            <div className = "input-box">
+
+                <input
+                  {...getInputProps({
+                    placeholder: 'Enter a location',
+                    className: 'col-sm-10'
+                  })}
+                />
+
+            
+
             <button onClick = {this.handleClick}> Add </button>
+
+            </div>
             <div className="autocomplete-dropdown-container">
               {suggestions.map(suggestion => {
                 const className = suggestion.active ? 'suggestion-item--active' : 'suggestion-item';
