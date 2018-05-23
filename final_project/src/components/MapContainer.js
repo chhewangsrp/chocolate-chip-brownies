@@ -1,7 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
-import SearchBox from './SearchBox';
+import { Map, InfoWindow, Marker } from 'google-maps-react';
 import './index.css'
 import customMarker from "./Marker.png"
 
@@ -48,12 +46,7 @@ class MapContainer extends React.Component {
 
   loadMap() {
 
-    if (this.props && this.props.google) { // checks to make sure that props have been passed
-      const { google } = this.props; // sets props equal to google
-      const maps = google.maps; // sets maps to google maps props
-      const mapRef = this.refs.map; // looks for HTML div ref 'map'. Returned in render below.
-      const node = ReactDOM.findDOMNode(mapRef); // finds the 'map' div in the React DOM, names it node
-      
+    if (this.props && this.props.google) { // checks to make sure that props have been passed      
     }
   }
 
@@ -68,10 +61,10 @@ class MapContainer extends React.Component {
   }
 
   render() {
-    console.log(this.state);
+
     const style = {
          width: '100vw',
-        height: '95vh'
+        height: '97vh'
       }
 
 
@@ -93,6 +86,7 @@ class MapContainer extends React.Component {
                  url: customMarker
               }}
                 name = {location.time}
+                title = {location.address}
                 onClick = {this.onMarkerClick}
                 position={{
                 lat: location.lat, lng: location.lng
@@ -105,8 +99,10 @@ class MapContainer extends React.Component {
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}>
             <div>
-              <p>This parking is available from: </p>
-              <h1>{this.state.selectedPlace.name}</h1>
+              <h6>This parking is available from: </h6>
+              <h6>{this.state.selectedPlace.name}</h6>
+              <h6> Location:</h6>
+              <h6>{this.state.selectedPlace.title} </h6>
 
             </div>
         </InfoWindow>
