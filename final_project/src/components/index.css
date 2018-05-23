@@ -49,7 +49,7 @@ body {
 
 .box-container
 {
-	height: 300px;
+	height: 150px;
 	width: 400px;
 	background-color: #ADD8E6;
 	margin-top: 50px;
@@ -63,7 +63,7 @@ body {
 }
 .input-box
 {
-	padding-top: 60px;
+	padding-top: 0px;
 	padding-left: 30px;
 }
 
@@ -71,4 +71,37 @@ body {
 {
 	position: fixed;
 }
+
+.quote 
+{
+	font-family: billabong;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.login {
+
+	background-color: #F8F8FF;
+	height: 250px;
+}
+
+.row
+{
+	padding-top: 0px;
+	padding-left: 30px;
+	margin-bottom: 0px;
+	align: center;
+}
+
+.login-button
+{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.ADD 
+{
+	margin-left: 0px;
+}
+
 

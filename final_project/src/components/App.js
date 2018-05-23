@@ -6,6 +6,8 @@ import { BrowserRouter, NavLink, Route } from 'react-router-dom';
 import logo from "./Logo1.png"
 import SearchBox from './SearchBox';
 import base from "../base";
+import HowItWorks from "./HowItWorks";
+import Login from "./Login";
 
 class App extends React.Component {
   constructor(props) 
@@ -44,18 +46,11 @@ class App extends React.Component {
 
   render() {
     
-    console.log(this.state.locations);
     const map = <MapContainer google={this.props.google} locations={this.state.locations} />
      
     return (
-
-      
-
       <BrowserRouter>
-
-
-       <div> 
-              
+       <div>               
         <nav className="navbar navbar-expand-lg ">  
                 <ul className="navbar-nav">
                   <li className= "nav-item">
@@ -66,7 +61,7 @@ class App extends React.Component {
                     </li>
 
                     <li className="nav-item">
-                        <a className="nav-link" href="#">How it works</a>
+                        <NavLink to ={"/Specification"} className="nav-link" href="#">Specification</NavLink>
                     </li>
           <li className = "nav-item">
             <NavLink to={"/Login"} className="nav-link" href = "#"> Login </NavLink>
@@ -79,7 +74,10 @@ class App extends React.Component {
           <SearchBox addToMaps={this.addToMaps} />
           {map}
           </div>
-          } />                 
+          } />  
+
+          <Route exact path = "/Specification" render = {() => <HowItWorks />} />  
+          <Route exact path = "/Login" render = {() => <Login />} />          
                 
     </div>
 
